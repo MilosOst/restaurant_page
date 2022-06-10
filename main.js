@@ -1,0 +1,1 @@
+(()=>{console.log("Testing");const e=document.querySelector(".header"),t=document.querySelector(".hamburger"),c=document.querySelector(".links");t.addEventListener("click",(()=>{e.classList.toggle("active"),t.classList.toggle("active"),c.classList.toggle("active")})),console.log("Working")})();
