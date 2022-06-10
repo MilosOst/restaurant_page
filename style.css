@@ -73,15 +73,12 @@ html, body, #content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
     align-items: center;
     background: url(./imgs/restaurant-bg.jpg) no-repeat center center;
     background-size: cover;
     color: white;
     padding: 1rem;
-}
-
-.content-box {
-    padding: 2rem;
     text-align: center;
 }
 
@@ -118,6 +115,7 @@ html, body, #content {
 .location, .hours {
     display: flex;
     align-items: center;
+    text-align: left;
 }
 
 .info img {
@@ -133,7 +131,7 @@ html, body, #content {
 
 
 
-@media(max-width:600px) {
+@media(max-width:768px) {
     .hamburger {
         display: block;
     }
