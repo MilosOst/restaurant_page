@@ -1,4 +1,8 @@
-console.log('Testing');
+import initializeSite from './base.js';
+
+
+initializeSite();
+
 
 const header = document.querySelector('.header');
 const hamburger = document.querySelector('.hamburger');
@@ -10,4 +14,4 @@ hamburger.addEventListener('click', () => {
     links.classList.toggle('active');
 });
 
-console.log('Working')
+
