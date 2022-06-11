@@ -50,6 +50,12 @@ html, body, #content {
     cursor: pointer;
 }
 
+.link.selected {
+    color: lightblue;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
 .link:hover {
     transform: translateY(-10%);
     text-decoration: underline;
@@ -185,6 +191,7 @@ html, body, #content {
 
     .header.active {
         flex-direction: column;
+        gap: 8px;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -221,6 +228,12 @@ html, body, #content {
 
     .menu-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 100%;
     }
+}
 
+@media (max-width:330px){
+    :root {
+        font-size: 12px;
+    }
 }
