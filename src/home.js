@@ -59,19 +59,6 @@ function loadHome() {
     const contentBox = document.querySelector('.content');
     contentBox.textContent = '';
     contentBox.append(heroSection, infoSection);
-    addHamburgerFunctionality();
-}
-
-function addHamburgerFunctionality() {
-    const hamburger = document.querySelector('.hamburger');
-    const header = document.querySelector('.header');
-    const links = document.querySelector('.links');
-
-    hamburger.addEventListener('click', () => {
-        header.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        links.classList.toggle('active');
-    });
 }
 
 

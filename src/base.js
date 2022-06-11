@@ -23,6 +23,7 @@ function createHeaderMenu() {
 
     const hamburger = document.createElement('div');
     hamburger.classList.add('hamburger');
+    hamburger.addEventListener('click', toggleHamburger);
 
     // Add the three bars to the hamburger
     for (let i = 0; i < 3; i++) {
@@ -77,6 +78,12 @@ function setSelectedLink(selectedLink) {
         }
     })
     selectedLink.classList.add('selected');
+}
+
+function toggleHamburger() {
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.header').classList.toggle('active');
+    document.querySelector('.links').classList.toggle('active');
 }
 
 function initializeSite() {
