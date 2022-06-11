@@ -1,4 +1,5 @@
 import loadHome from "./home.js";
+import loadMenu from "./menu.js";
 
 
 function createHeader() {
@@ -29,35 +30,63 @@ function createHeaderMenu() {
         bar.classList.add('bar');
         hamburger.appendChild(bar);
     }
-    headerMenu.appendChild(hamburger);
 
+    headerMenu.appendChild(hamburger);
     return headerMenu;
 }
 
 function createHeaderLinks() {
     const linkSection = document.createElement('ul');
     linkSection.classList.add('links');
-    const linkNames = ['Home', 'Menu', 'Contact'];
 
-    // Create Home, Menu, and Contact links
-    for (let i = 0; i < 3; i++) {
-        const link = document.createElement('li');
-        link.classList.add('link');
-        link.textContent = linkNames[i];
-        linkSection.appendChild(link);
-    }
+    const homeLink = document.createElement('li');
+    homeLink.classList.add('link');
+    homeLink.classList.add('selected');
+    homeLink.textContent = 'Home';
+    homeLink.addEventListener('click', () => {
+        if (homeLink.classList.contains('selected')) return;
+        setSelectedLink(homeLink);
+        loadHome();
+    });
+
+
+    const menuLink = document.createElement('li');
+    menuLink.classList.add('link');
+    menuLink.textContent = 'Menu';
+    menuLink.addEventListener('click', () => {
+        if (menuLink.classList.contains('selected')) return;
+        setSelectedLink(menuLink);
+        loadMenu();
+    });
+    
+    const contactLink = document.createElement('li');
+    contactLink.classList.add('link');
+    contactLink.textContent = 'Contact';
+    contactLink.addEventListener('click', () => console.log('Contact Clicked'));
+
+    linkSection.append(homeLink, menuLink, contactLink);
     return linkSection;
+
+}
+
+function setSelectedLink(selectedLink) {
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        if (link.textContent !== selectedLink.textContent) {
+            link.classList.remove('selected');
+        }
+    })
+    selectedLink.classList.add('selected');
 }
 
 function initializeSite() {
     const contentSection = document.querySelector('#content');
 
-    // const mainContent = document.createElement('main');
-    // mainContent.classList.add('content');
+    const mainContent = document.createElement('main');
+    mainContent.classList.add('content');
 
-    // contentSection.append(createHeader(), mainContent);
-    contentSection.append(createHeader());
-    // loadHome();
+    contentSection.append(createHeader(), mainContent);
+    loadHome();
 }
 
 export default initializeSite;
