@@ -4,6 +4,7 @@
     box-sizing: border-box;
     --red: #dc143c;
     --green: #48db46;
+    --black-bg: rgba(0, 0, 0, 80%);
 }
 
 :root {
@@ -135,7 +136,7 @@ html, body, #content {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     width: 80%;
-    background-color: rgba(0, 0, 0, 80%);
+    background-color: var(--black-bg);
     padding: 1rem;
 }
 
@@ -152,6 +153,28 @@ html, body, #content {
 .food-cost {
     color: var(--green);
     font-style: italic;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: var(--black-bg);
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 1.3rem;
+
+}
+
+.phone-contact, .location-contact {
+    display: flex;
+    gap: 1rem;
+}
+
+.map-image > img {
+    width: 100%;
 }
 
 

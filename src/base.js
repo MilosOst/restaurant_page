@@ -92,8 +92,9 @@ function initializeSite() {
     const mainContent = document.createElement('main');
     mainContent.classList.add('content');
 
-    contentSection.append(createHeader(), mainContent);
-    loadHome();
+    // contentSection.append(createHeader(), mainContent);
+    //loadHome();
+    contentSection.appendChild(createHeader());
 }
 
 export default initializeSite;
