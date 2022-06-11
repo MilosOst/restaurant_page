@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     --red: #dc143c;
+    --green: #48db46;
 }
 
 :root {
@@ -129,6 +130,29 @@ html, body, #content {
     font-weight: 700;
 }
 
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 80%);
+    padding: 1rem;
+}
+
+.menu-item img {
+    width: 50%;
+    height: 70%;
+}
+
+.food-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.food-cost {
+    color: var(--green);
+    font-style: italic;
+}
 
 
 @media(max-width:768px) {
@@ -170,6 +194,10 @@ html, body, #content {
     @keyframes fadeIn {
         0% {opacity: 0;}
         100% {opacity: 1;}
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
 }

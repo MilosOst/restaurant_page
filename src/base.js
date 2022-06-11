@@ -52,11 +52,12 @@ function createHeaderLinks() {
 function initializeSite() {
     const contentSection = document.querySelector('#content');
 
-    const mainContent = document.createElement('main');
-    mainContent.classList.add('content');
+    // const mainContent = document.createElement('main');
+    // mainContent.classList.add('content');
 
-    contentSection.append(createHeader(), mainContent);
-    loadHome();
+    // contentSection.append(createHeader(), mainContent);
+    contentSection.append(createHeader());
+    // loadHome();
 }
 
 export default initializeSite;

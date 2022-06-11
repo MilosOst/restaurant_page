@@ -1,7 +1,7 @@
 import initializeSite from './base.js';
 
 
-initializeSite();
+// initializeSite();
 
 
 const header = document.querySelector('.header');
