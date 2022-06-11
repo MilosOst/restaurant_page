@@ -1,5 +1,6 @@
 import loadHome from "./home.js";
 import loadMenu from "./menu.js";
+import loadContact from "./contact.js";
 
 
 function createHeader() {
@@ -63,7 +64,11 @@ function createHeaderLinks() {
     const contactLink = document.createElement('li');
     contactLink.classList.add('link');
     contactLink.textContent = 'Contact';
-    contactLink.addEventListener('click', () => console.log('Contact Clicked'));
+    contactLink.addEventListener('click', () => {
+        if (contactLink.classList.contains('selected')) return;
+        setSelectedLink(contactLink);
+        loadContact();
+    });
 
     linkSection.append(homeLink, menuLink, contactLink);
     return linkSection;
@@ -92,9 +97,8 @@ function initializeSite() {
     const mainContent = document.createElement('main');
     mainContent.classList.add('content');
 
-    // contentSection.append(createHeader(), mainContent);
-    //loadHome();
-    contentSection.appendChild(createHeader());
+    contentSection.append(createHeader(), mainContent);
+    loadHome();
 }
 
 export default initializeSite;
